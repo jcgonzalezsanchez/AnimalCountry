@@ -1,0 +1,63 @@
+﻿@page
+@model HPWebApp.Pages.Propietarios.IndexModel
+@addTagHelper`*, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+
+
+<h3 class="center-align indigo-text text-darken-2">Pripietaios</h3>
+
+<br />
+
+<div>
+    <a asp-page="../Index"
+       class="btn-floating btn waves-effect waves-light white-text blue darken-2 left-align">
+        <i class="material-icons">arrow_back</i>
+    </a>
+
+    <a asp-page="Add"
+       class="btn-floating waves-effect waves-light white-text blue darken-2 right-align">
+        <i class="material-icons">add</i>
+    </a>
+</div>
+
+<br />
+
+<form method="post">
+    <table class="responsive-table striped">
+        <thead>
+            <tr class="light white-text card-panel indigo darken-2 card-content">
+                <th class="center-align">Nombre</th>
+                <th class="center-align">Apellido</th>
+                <th class="center-align">TipoDocumento</th>
+                <th class="center-align">Identificacion</th>
+                <th class="center-align">Ciudad</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.Propietarios)
+            {
+                <tr>
+                    <td class="center-align">@item.PrimerNombre</td>
+                    <td class="center-align">@item.PrimerApellido</td>
+                    <td class="center-align">@item.TipoIdentificacion</td>
+                    <td class="center-align">@item.Identificacion</td>
+                    <td class="center-align">@item.Ciudad</td>
+
+                    <td>
+                        <button type="submit"
+                                asp-page-handler="delete"
+                                asp-route-id="@item.Id"
+                                class="btn-floating btn waves-effect waves-light white-text blue darken-2">
+                            <i class="material-icons">delete_forever</i>
+                            >
+                        </button>
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
