@@ -17,7 +17,7 @@ namespace HPWebApp.Data
         internal void DeletePropietario(Guid id)
         {
             var propietario = Context.Propietario.FirstOrDefault(x => x.Id == id);
-            Context.Propietario.Remove(propietario);
+            this.Context.Propietario.Remove(propietario);
             Context.SaveChanges();
         }
 
