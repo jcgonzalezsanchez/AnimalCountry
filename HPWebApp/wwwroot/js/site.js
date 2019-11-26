@@ -6,5 +6,10 @@
 
 
 $(document).ready(function () {
+    $('.sidenav').sidenav();
+    $('.datepicker').datepicker({
+        yearRange: [1950, 2020],
+        format: 'dd/mm/yyyy'
+    });
     $('select').formSelect();
 });

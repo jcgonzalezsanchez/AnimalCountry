@@ -13,13 +13,21 @@
 
         <div>
             <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <input id="name" type="text" class="validate blue-text text-darken-4" asp-for="Propietario.PrimerNombre">
-                    <label for="name">Name</label>
+                <div class="input-field col s12 m3 l3">
+                    <input id="primer_nombre" type="text" class="validate blue-text text-darken-4" asp-for="Propietario.PrimerNombre">
+                    <label for="primer_nombre">Primer Nombre</label>
                 </div>
-                <div class="input-field col s12 m6 l6">
-                    <input id="last_name" type="text" class="validate blue-text text-darken-4" asp-for="Propietario.PrimerApellido">
-                    <label for="last_name">Last Name</label>
+                <div class="input-field col s12 m3 l3">
+                    <input id="segundo_nombre" type="text" class="validate blue-text text-darken-4" asp-for="Propietario.SegundoNombre">
+                    <label for="segundo_nombre">Segundo Nombre</label>
+                </div>
+                <div class="input-field col s12 m3 l3">
+                    <input id="primer_apellido" type="text" class="validate blue-text text-darken-4" asp-for="Propietario.PrimerApellido">
+                    <label for="primer_apellido">Primer Apellido</label>
+                </div>
+                <div class="input-field col s12 m3 l3">
+                    <input id="segundo_apellido" type="text" class="validate blue-text text-darken-4" asp-for="Propietario.SegundoApellido">
+                    <label for="segundo_apellido">Segundo Apellido</label>
                 </div>
             </div>
         </div>
@@ -36,17 +44,17 @@
                 </div>
                 <div class="input-field col s12 m6 l6">
                     <input id="nit" type="number" class="validate blue-text text-darken-4" asp-for="Propietario.Identificacion">
-                    <label for="nit">Number</label>
+                    <label for="nit">Número</label>
                 </div>
             </div>
         </div>
 
         <div>
             <div class="row">
-                
-                <div class="input-field col s12 m6 l6">
+
+                <div class="input-field col s12 m4 l4">
                     <select asp-for="Propietario.Ciudad">
-                        <option value="" disabled selected>Select city of residence</option>
+                        <option value="" disabled selected>Seleccione la ciudad</option>
                         <option value="Bogota">Bogotá</option>
                         <option value="Barranquilla">Barranquilla</option>
                         <option value="Cali">Cali</option>
@@ -55,6 +63,36 @@
                         <option value="SantaMarta">Santa Marta</option>
                         <option value="OtraCiudad">Otra ciudad</option>
                     </select>
+                </div>
+                <div class="input-field col s12 m4 l4">
+                    <input id="direccion" type="text" class="validate blue-text text-darken-4" asp-for="Propietario.Direccion">
+                    <label for="direccion">Dirección</label>
+                </div>
+                <div class="input-field col s12 m4 l4">
+                    <input id="ocupacion" type="text" class="validate blue-text text-darken-4" asp-for="Propietario.Ocupacion">
+                    <label for="ocupacion">Ocupación</label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+
+                <div class="input-field col s12 m3 l3">
+                    <input id="telefono1" type="number" class="validate blue-text text-darken-4" asp-for="Propietario.Telefono1">
+                    <label for="telefono1">Teléfono 1</label>
+                </div>
+                <div class="input-field col s12 m3 l3">
+                    <input id="telefono2" type="number" class="validate blue-text text-darken-4" asp-for="Propietario.Telefono2">
+                    <label for="telefono2">Teléfono 2</label>
+                </div>
+                <div class="input-field col s12 m3 l3">
+                    <input id="celular1" type="number" class="validate blue-text text-darken-4" asp-for="Propietario.Celular1">
+                    <label for="celular1">Celular 1</label>
+                </div>
+                <div class="input-field col s12 m3 l3">
+                    <input id="celular2" type="number" class="validate blue-text text-darken-4" asp-for="Propietario.Celular2">
+                    <label for="celular2">Celular 2</label>
                 </div>
             </div>
         </div>

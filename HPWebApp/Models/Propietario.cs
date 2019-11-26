@@ -24,12 +24,12 @@ namespace HPWebApp.Models
         [Required]
         public string Identificacion { get; set; }
         public string Ciudad { get; set; }
-        public string Ocupacion { get; set; }
         public string Direccion { get; set; }
-
+        public string Ocupacion { get; set; }
+        [Required]
         public string Telefono1 { get; set; }
         public string Telefono2 { get; set; }
-
+        [Required]
         public string Celular1 { get; set; }
         public string Celular2 { get; set; }
         public string Correo { get; set; }
