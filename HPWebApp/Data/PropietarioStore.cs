@@ -27,6 +27,24 @@ namespace HPWebApp.Data
             Context.SaveChanges();
         }
 
+        internal Propietario GetPropietarioById(Guid id)
+        {
+            return Context.Propietario.FirstOrDefault(x => x.Id == id);
+        }
+
+        internal void EditPropietario(Propietario propietario)
+        {
+            Propietario CurrentPropietario = GetPropietarioById(propietario.Id);
+            CurrentPropietario.PrimerNombre = propietario.PrimerNombre;
+            CurrentPropietario.PrimerApellido = propietario.PrimerApellido;
+            CurrentPropietario.TipoIdentificacion = propietario.TipoIdentificacion;
+            CurrentPropietario.Identificacion = propietario.Identificacion;
+            CurrentPropietario.Ciudad = propietario.Ciudad;
+
+            Context.Propietario.Update(CurrentPropietario);
+            Context.SaveChanges();
+        }
+
         internal List<Propietario> GetPropietarios()
         {
             return Context.Propietario.ToList();
