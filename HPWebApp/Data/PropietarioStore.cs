@@ -16,20 +16,20 @@ namespace HPWebApp.Data
 
         internal void DeletePropietario(Guid id)
         {
-            var propietario = Context.Propietario.FirstOrDefault(x => x.Id == id);
-            this.Context.Propietario.Remove(propietario);
+            var propietario = Context.Propietarios.FirstOrDefault(x => x.Id == id);
+            this.Context.Propietarios.Remove(propietario);
             Context.SaveChanges();
         }
 
         internal void AddPropietario(Propietario propietario)
         {
-            Context.Propietario.Add(propietario);
+            Context.Propietarios.Add(propietario);
             Context.SaveChanges();
         }
 
         internal Propietario GetPropietarioById(Guid id)
         {
-            return Context.Propietario.FirstOrDefault(x => x.Id == id);
+            return Context.Propietarios.FirstOrDefault(x => x.Id == id);
         }
 
         internal void EditPropietario(Propietario propietario)
@@ -41,13 +41,13 @@ namespace HPWebApp.Data
             CurrentPropietario.Identificacion = propietario.Identificacion;
             CurrentPropietario.Ciudad = propietario.Ciudad;
 
-            Context.Propietario.Update(CurrentPropietario);
+            Context.Propietarios.Update(CurrentPropietario);
             Context.SaveChanges();
         }
 
         internal List<Propietario> GetPropietarios()
         {
-            return Context.Propietario.ToList();
+            return Context.Propietarios.ToList();
         }
     }
 }

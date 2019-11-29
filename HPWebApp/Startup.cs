@@ -37,6 +37,7 @@ namespace HPWebApp
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddScoped<PropietarioStore>();
+            services.AddScoped<PacienteStore>();
 
             services.AddDbContext<HPContext>(opt =>
             opt.UseSqlServer(Configuration.GetConnectionString("HealthyPets"),

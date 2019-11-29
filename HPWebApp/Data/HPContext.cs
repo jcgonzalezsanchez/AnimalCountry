@@ -10,7 +10,8 @@ namespace HPWebApp.Data
 {
     public class HPContext : DbContext
     {
-        public DbSet<Propietario> Propietario { get; set; }
+        public DbSet<Propietario> Propietarios { get; set; }
+        public DbSet<Paciente> Pacientes { get; set; }
         public HPContext(DbContextOptions<HPContext> options)
             : base(options)
         {

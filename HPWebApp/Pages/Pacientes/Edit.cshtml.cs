@@ -7,18 +7,23 @@ using HPWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace HPWebApp.Pages.Propietarios
+namespace HPWebApp.Pages.Pacientes
 {
-    public class AddModel : PageModel
+    public class EditModel : PageModel
     {
-        public PropietarioStore PropietarioStore { get; set; }
-        public AddModel(PropietarioStore propietarioStore)
+        public PacienteStore PacienteStore { get; set; }
+        public EditModel(PacienteStore pacienteStore)
         {
-            PropietarioStore = propietarioStore;
+            PacienteStore = pacienteStore;
         }
 
         [BindProperty]
-        public Propietario Propietario { get; set; }
+        public Paciente Paciente { get; set; }
+
+        public void OnGet(Guid id)
+        {
+            Paciente = PacienteStore.GetPacienteById(id);
+        }
 
         public IActionResult OnPostAsync()
         {
@@ -26,16 +31,9 @@ namespace HPWebApp.Pages.Propietarios
             {
                 return Page();
             }
-
-            //Add
-            PropietarioStore.AddPropietario(Propietario);
+            //Edit
+            PacienteStore.EditPaciente(Paciente);
             return RedirectToPage("./Index");
-        }
-
-
-        public void OnGet()
-        {
-
         }
     }
 }
