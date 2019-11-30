@@ -23,5 +23,6 @@ namespace HPWebApp.Models
         public string MotivoDefuncion { get; set; }
         public string Observacion { get; set; }
         public List<PropietarioPaciente> PropietarioPacientes { get; set; }
+
     }
 }

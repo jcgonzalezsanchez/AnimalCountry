@@ -2,3 +2,72 @@
 @model HPWebApp.Pages.Pacientes.IndexModel
 @{
 }
+
+<h3 class="center-align indigo-text text-darken-2">Pacientes</h3>
+
+<br />
+
+<div>
+    <a asp-page="../Index"
+       class="btn-floating btn waves-effect waves-light white-text blue darken-2 left-align">
+        <i class="material-icons">arrow_back</i>
+    </a>
+
+    <a asp-page="Add"
+       class="btn-floating waves-effect waves-light white-text blue darken-2 right-align">
+        <i class="material-icons">add</i>
+    </a>
+</div>
+
+<br />
+
+<form method="post">
+    <table class="responsive-table striped">
+        <thead>
+            <tr class="light white-text card-panel indigo darken-2 card-content">
+                <th class="center-align">Nombre</th>
+                <th class="center-align">Color</th>
+                <th class="center-align">Señas Particulares</th>
+                <th class="center-align">Zona</th>
+                <th class="center-align">Chip</th>
+                <th class="center-align">Nombre Propietario</th>
+                <th class="center-align"></th>
+                <th class="center-align"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.Pacientes)
+            {
+            <tr>
+                <td class="center-align">@item.Nombre</td>
+                <td class="center-align">@item.Color</td>
+                <td class="center-align">@item.SenasParticulares</td>
+                <td class="center-align">@item.Zona</td>
+                <td class="center-align">@item.Chip</td>
+
+                <td>
+                    <a asp-route-id="@item.Id"
+                       asp-page="Edit"
+                       class="btn-floating btn waves-effect waves-light white-text blue darken-2 centrar">
+                        <i class="material-icons">edit</i>
+                    </a>
+                </td>
+
+
+                <td>
+                    <button type="submit"
+                            asp-page-handler="delete"
+                            asp-route-id="@item.Id"
+                            class="btn-floating btn waves-effect waves-light white-text blue darken-2">
+                        <i class="material-icons">delete_forever</i>
+                        >
+                    </button>
+                </td>
+
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</form>

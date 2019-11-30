@@ -13,6 +13,7 @@ namespace HPWebApp.Pages.Pacientes
     {
         public PacienteStore PacienteStore { get; set; }
         public List<Paciente> Pacientes { get; set; }
+        public List<Propietario> Propietarios { get; set; }
 
         public IndexModel(PacienteStore pacienteStore)
         {

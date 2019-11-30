@@ -34,6 +34,7 @@
                 <th class="center-align">Ciudad</th>
                 <th class="center-align"></th>
                 <th class="center-align"></th>
+                <th class="center-align"></th>
             </tr>
         </thead>
         <tbody>
@@ -64,6 +65,14 @@
                         <i class="material-icons">delete_forever</i>
                         >
                     </button>
+                </td>
+
+                <td>
+                    <a asp-route-customerid="@item.Id"
+                       asp-page="../Pacientes/Add"
+                       class="btn-floating pulse btn waves-effect waves-light white-text blue darken-2">
+                        <i class="material-icons">pets</i>
+                    </a>
                 </td>
 
 
