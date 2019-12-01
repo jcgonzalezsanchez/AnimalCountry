@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HPWebApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HPWebApp.Data
 {
@@ -16,7 +17,7 @@ namespace HPWebApp.Data
 
         internal List<Paciente> GetPacientes()
         {
-            return Context.Pacientes.ToList();
+            return Context.Pacientes.Include(x => x.Propietarios).ToList();
         }
 
         internal void DeletePaciente(Guid id)
@@ -28,7 +29,9 @@ namespace HPWebApp.Data
 
         internal Paciente GetPacienteById(Guid id)
         {
-            return Context.Pacientes.FirstOrDefault(x => x.Id == id);
+            return Context.Pacientes
+                .Include(x => x.Propietarios)
+                .FirstOrDefault(x => x.Id == id);
         }
 
         internal void AddPaciente(Paciente paciente)

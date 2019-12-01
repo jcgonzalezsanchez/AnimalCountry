@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace HPWebApp.Models
             Id = Guid.NewGuid();
         }
         public Guid Id { get; set; }
+        public Guid PacienteId { get; set; }
         [Required]
         public string PrimerNombre { get; set; }
         public string SegundoNombre { get; set; }
@@ -34,7 +36,8 @@ namespace HPWebApp.Models
         public string Celular2 { get; set; }
         public string Correo { get; set; }
         public string Observacion { get; set; }
-        public List<PropietarioPaciente> PropietarioPacientes { get; set; }
+        [NotMapped]
+        public List<Paciente> Pacientes { get; set; }
 
     }
 }

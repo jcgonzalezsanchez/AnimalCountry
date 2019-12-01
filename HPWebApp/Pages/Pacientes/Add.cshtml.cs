@@ -27,14 +27,18 @@ namespace HPWebApp.Pages.Pacientes
                 return Page();
             }
             //Add
+
+            Paciente.PropietarioId = PropietarioId;
             PacienteStore.AddPaciente(Paciente);
             return RedirectToPage("./Index");
 
         }
 
-        public void OnGet()
+        [BindProperty]
+        public Guid PropietarioId { get; set; }
+        public void OnGet(Guid propietarioid)
         {
-
+            PropietarioId = propietarioid;
         }
     }
 }
