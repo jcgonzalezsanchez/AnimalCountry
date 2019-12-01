@@ -14,7 +14,6 @@ namespace HPWebApp.Models
             Id = Guid.NewGuid();
         }
         public Guid Id { get; set; }
-        public Guid PacienteId { get; set; }
         [Required]
         public string PrimerNombre { get; set; }
         public string SegundoNombre { get; set; }
@@ -36,8 +35,6 @@ namespace HPWebApp.Models
         public string Celular2 { get; set; }
         public string Correo { get; set; }
         public string Observacion { get; set; }
-        [NotMapped]
-        public List<Paciente> Pacientes { get; set; }
-
+        public List<PropietarioPaciente> PropietariosPacientes { get; set; }
     }
 }

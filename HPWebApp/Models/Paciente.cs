@@ -24,8 +24,7 @@ namespace HPWebApp.Models
         public DateTime FechaDefuncion { get; set; }
         public string MotivoDefuncion { get; set; }
         public string Observacion { get; set; }
-        [NotMapped]
-        public List<Propietario> Propietarios { get; set; }
+        public List<PropietarioPaciente> PropietariosPacientes{ get; set; }
 
     }
 }

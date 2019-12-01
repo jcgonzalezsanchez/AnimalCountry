@@ -12,10 +12,16 @@ namespace HPWebApp.Data
     {
         public DbSet<Propietario> Propietarios { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<PropietarioPaciente> PropietarioPaciente { get; set; }
         public HPContext(DbContextOptions<HPContext> options)
             : base(options)
         {
             this.Database.EnsureCreated();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<PropietarioPaciente>().HasKey(sc => new { sc.PacienteId, sc.PropietarioId});
         }
     }
 }

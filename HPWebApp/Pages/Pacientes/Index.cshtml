@@ -45,6 +45,12 @@
                 <td class="center-align">@item.SenasParticulares</td>
                 <td class="center-align">@item.Zona</td>
                 <td class="center-align">@item.Chip</td>
+                <td class="center-align">
+                    @foreach (var p in @item.PropietariosPacientes)
+                    {
+                        <span>@p.Propietario.PrimerNombre @p.Propietario.PrimerApellido</span>
+                    }
+                </td>
 
                 <td>
                     <a asp-route-id="@item.Id"
