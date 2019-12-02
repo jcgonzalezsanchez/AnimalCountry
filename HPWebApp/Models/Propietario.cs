@@ -35,6 +35,6 @@ namespace HPWebApp.Models
         public string Celular2 { get; set; }
         public string Correo { get; set; }
         public string Observacion { get; set; }
-        public List<PropietarioPaciente> PropietariosPacientes { get; set; }
+        public List<PropietarioPaciente> PropietarioPacientes { get; set; }
     }
 }

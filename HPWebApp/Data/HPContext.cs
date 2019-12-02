@@ -12,7 +12,7 @@ namespace HPWebApp.Data
     {
         public DbSet<Propietario> Propietarios { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
-        public DbSet<PropietarioPaciente> PropietarioPaciente { get; set; }
+        public DbSet<PropietarioPaciente> PropietarioPacientes { get; set; }
         public HPContext(DbContextOptions<HPContext> options)
             : base(options)
         {
@@ -21,7 +21,7 @@ namespace HPWebApp.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<PropietarioPaciente>().HasKey(sc => new { sc.PacienteId, sc.PropietarioId});
+            modelBuilder.Entity<PropietarioPaciente>().HasKey(x => new { x.PacienteId, x.PropietarioId});
         }
     }
 }

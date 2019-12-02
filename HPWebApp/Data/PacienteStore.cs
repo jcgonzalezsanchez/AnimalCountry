@@ -11,16 +11,21 @@ namespace HPWebApp.Data
     {
         public HPContext Context { get; set; }
         public PropietarioStore PropietarioStore { get; set; }
+        public List<PropietarioPaciente> PropietarioPaciente { get; set; }
         public PacienteStore(HPContext context, PropietarioStore propietarioStore)
         {
             Context = context;
             PropietarioStore = propietarioStore;
+            PropietarioPaciente = Context.PropietarioPacientes
+                .Include(x => x.Propietario)
+                .Include(x => x.Paciente)
+                .ToList();
         }
 
         internal List<Paciente> GetPacientes()
         {
             return Context.Pacientes
-                .Include(x => x.PropietariosPacientes)
+                .Include(x => x.PropietarioPacientes)
                 .ToList();
         }
 
@@ -45,9 +50,11 @@ namespace HPWebApp.Data
             {
                 PacienteId = paciente.Id,
                 PropietarioId = propietario.Id
+                
             };
-            Context.Pacientes.Add(paciente);
+            
             Context.Add(pp);//Esta línea es la que agrega la relación a la tabla intermedia.
+            Context.Pacientes.Add(paciente);
             Context.SaveChanges();
         }
 
@@ -64,7 +71,6 @@ namespace HPWebApp.Data
             CurrentPaciente.FechaDefuncion = paciente.FechaDefuncion;
             CurrentPaciente.MotivoDefuncion = paciente.MotivoDefuncion;
             CurrentPaciente.Observacion = paciente.Observacion;
-
 
             Context.Pacientes.Update(CurrentPaciente);
             Context.SaveChanges();

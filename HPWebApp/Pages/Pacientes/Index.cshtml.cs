@@ -15,12 +15,11 @@ namespace HPWebApp.Pages.Pacientes
         public PacienteStore PacienteStore { get; set; }
         public PropietarioStore PropietarioStore { get; set; }
         public List<Paciente> Pacientes { get; set; }
-        public List<PropietarioPaciente> PropietarioPacientes { get; set; }
+
         public IndexModel(PacienteStore pacienteStore)
         {
             PacienteStore = pacienteStore;
             Pacientes = PacienteStore.GetPacientes();
-
         }
 
         public IActionResult OnPostDelete(Guid id)
