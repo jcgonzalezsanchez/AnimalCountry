@@ -28,10 +28,10 @@
         <thead>
             <tr class="light white-text card-panel indigo darken-2 card-content">
                 <th class="center-align">Nombre</th>
-                <th class="center-align">Apellido</th>
                 <th class="center-align">TipoDocumento</th>
                 <th class="center-align">Identificacion</th>
                 <th class="center-align">Ciudad</th>
+                <th class="center-align">Celular</th>
                 <th class="center-align"></th>
                 <th class="center-align"></th>
                 <th class="center-align"></th>
@@ -42,11 +42,11 @@
             @foreach (var item in Model.Propietarios)
             {
             <tr>
-                <td class="center-align">@item.PrimerNombre</td>
-                <td class="center-align">@item.PrimerApellido</td>
+                <td class="center-align">@item.PrimerNombre @item.PrimerApellido</td>
                 <td class="center-align">@item.TipoIdentificacion</td>
                 <td class="center-align">@item.Identificacion</td>
                 <td class="center-align">@item.Ciudad</td>
+                <td class="center-align">@item.Celular1</td>
 
                 <td>
                     <a asp-route-id="@item.Id"
