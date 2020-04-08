@@ -13,7 +13,7 @@ namespace HPWebApp.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     PropietarioId = table.Column<Guid>(nullable: false),
-                    Nombre = table.Column<string>(nullable: true),
+                    Nombre = table.Column<string>(nullable: false),
                     Color = table.Column<string>(nullable: true),
                     SenasParticulares = table.Column<string>(nullable: true),
                     Zona = table.Column<string>(nullable: true),

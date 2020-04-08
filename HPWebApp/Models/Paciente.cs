@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace HPWebApp.Models
         }
         public Guid Id { get; set; }
         public Guid PropietarioId { get; set; }
+        [Required]
         public string Nombre { get; set; }
         public string Color { get; set; }
         public string SenasParticulares { get; set; }

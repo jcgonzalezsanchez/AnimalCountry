@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HPWebApp.Migrations
 {
     [DbContext(typeof(HPContext))]
-    [Migration("20200408162154_Inicial")]
+    [Migration("20200408183108_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,8 @@ namespace HPWebApp.Migrations
 
                     b.Property<string>("MotivoDefuncion");
 
-                    b.Property<string>("Nombre");
+                    b.Property<string>("Nombre")
+                        .IsRequired();
 
                     b.Property<string>("NumeroChip");
 

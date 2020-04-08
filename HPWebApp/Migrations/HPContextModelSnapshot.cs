@@ -34,7 +34,8 @@ namespace HPWebApp.Migrations
 
                     b.Property<string>("MotivoDefuncion");
 
-                    b.Property<string>("Nombre");
+                    b.Property<string>("Nombre")
+                        .IsRequired();
 
                     b.Property<string>("NumeroChip");
 
