@@ -21,7 +21,7 @@ namespace HPWebApp.Models
         public string Chip { get; set; }
         public string NumeroChip { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public DateTime FechaDefuncion { get; set; }
+        public Nullable<DateTime> FechaDefuncion { get; set; }
         public string MotivoDefuncion { get; set; }
         public string Observacion { get; set; }
         public List<PropietarioPaciente> PropietarioPacientes{ get; set; }

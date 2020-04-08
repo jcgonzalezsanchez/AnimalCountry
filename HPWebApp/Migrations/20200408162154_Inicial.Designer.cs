@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HPWebApp.Migrations
 {
     [DbContext(typeof(HPContext))]
-    [Migration("20191206020341_Modelos")]
-    partial class Modelos
+    [Migration("20200408162154_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,7 +30,7 @@ namespace HPWebApp.Migrations
 
                     b.Property<string>("Color");
 
-                    b.Property<DateTime>("FechaDefuncion");
+                    b.Property<DateTime?>("FechaDefuncion");
 
                     b.Property<DateTime>("FechaNacimiento");
 

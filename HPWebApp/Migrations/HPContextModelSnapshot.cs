@@ -28,7 +28,7 @@ namespace HPWebApp.Migrations
 
                     b.Property<string>("Color");
 
-                    b.Property<DateTime>("FechaDefuncion");
+                    b.Property<DateTime?>("FechaDefuncion");
 
                     b.Property<DateTime>("FechaNacimiento");
 
