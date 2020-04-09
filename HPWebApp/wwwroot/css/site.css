@@ -7,6 +7,14 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+
+/* Estilos generales--------------------------------*/
+
+center {
+    align-content: center;
+}
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 body {

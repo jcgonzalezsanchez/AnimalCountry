@@ -13,7 +13,9 @@ namespace HPWebApp.Models
         {
             Id = Guid.NewGuid();
         }
+        [Key]
         public Guid Id { get; set; }
+        [ForeignKey("Propietario")]
         public Guid PropietarioId { get; set; }
         [Required]
         public string Nombre { get; set; }

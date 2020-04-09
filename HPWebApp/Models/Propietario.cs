@@ -13,6 +13,7 @@ namespace HPWebApp.Models
         {
             Id = Guid.NewGuid();
         }
+        [Key]
         public Guid Id { get; set; }
         [Required]
         public string PrimerNombre { get; set; }

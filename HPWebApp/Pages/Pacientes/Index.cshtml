@@ -25,43 +25,43 @@
     <table class="responsive-table striped">
         <thead>
             <tr class="light white-text card-panel indigo darken-2 card-content">
-                <th class="center-align">Nombre</th>
-                <th class="center-align">Color</th>
-                <th class="center-align">Señas Particulares</th>
-                <th class="center-align">Zona</th>
-                <th class="center-align">Chip</th>
-                <th class="center-align">Nombre Propietario</th>
-                <th class="center-align"></th>
-                <th class="center-align"></th>
+                <th class="center">Nombre</th>
+                <th class="center">Color</th>
+                <th class="center">Señas Particulares</th>
+                <th class="center">Zona</th>
+                <th class="center">Chip</th>
+                <th class="center">Nombre Propietario</th>
+                <th class="center">Editar</th>
+                <th class="center">Eliminar</th>
             </tr>
         </thead>
         <tbody>
 
             @foreach (var item in Model.Pacientes)
             {
-                <tr>
-                    <td class="center-align">@item.Nombre</td>
-                    <td class="center-align">@item.Color</td>
-                    <td class="center-align">@item.SenasParticulares</td>
-                    <td class="center-align">@item.Zona</td>
-                    <td class="center-align">@item.Chip</td>
-                    <td class="center-align">
+                <tr class="center">
+                    <td class="center">@item.Nombre</td>
+                    <td class="center">@item.Color</td>
+                    <td class="center">@item.SenasParticulares</td>
+                    <td class="center">@item.Zona</td>
+                    <td class="center">@item.Chip</td>
+                    <td class="center">
                         @foreach (var p in @item.PropietarioPacientes)
                         {
                             <span>@p.Propietario.PrimerNombre @p.Propietario.PrimerApellido</span>
                         }
                     </td>
 
-                    <td>
+                    <td class="center">
                         <a asp-route-id="@item.Id"
                            asp-page="Edit"
-                           class="btn-floating btn waves-effect waves-light white-text blue darken-2 centrar">
+                           class="btn-floating btn waves-effect waves-light white-text blue darken-2">
                             <i class="material-icons">edit</i>
                         </a>
                     </td>
 
 
-                    <td>
+                    <td class="center">
                         <button type="submit"
                                 asp-page-handler="delete"
                                 asp-route-id="@item.Id"
