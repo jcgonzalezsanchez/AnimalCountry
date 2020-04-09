@@ -11,5 +11,8 @@ $(document).ready(function () {
         yearRange: [2000, 2020],
         format: 'dd/mm/yyyy'
     });
-    $('select').formSelect();
+    $('select').formSelect(),
+    $('.carousel.carousel-slider').carousel({
+       fullWidth: true
+       });
 });
