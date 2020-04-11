@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HPWebApp.Migrations
 {
     [DbContext(typeof(HPContext))]
-    [Migration("20200408183108_Inicial")]
+    [Migration("20200411190826_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

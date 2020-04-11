@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HPWebApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HPWebApp.Data
 {
     public class PropietarioStore
     {
         public HPContext Context { get; set; }
+        public List<PropietarioPaciente> PropietarioPaciente { get; set; }
         public PropietarioStore(HPContext context)
         {
             Context = context;
+            PropietarioPaciente = Context.PropietarioPacientes
+                .Include(x => x.Paciente)
+                .ToList();
         }
 
         internal void DeletePropietario(Guid id)
@@ -47,7 +52,9 @@ namespace HPWebApp.Data
 
         internal List<Propietario> GetPropietarios()
         {
-            return Context.Propietarios.ToList();
+            return Context.Propietarios
+                .Include(x => x.PropietarioPacientes)
+                .ToList();
         }
     }
 }

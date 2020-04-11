@@ -27,14 +27,15 @@
     <table class="responsive-table striped">
         <thead>
             <tr class="light white-text card-panel indigo darken-2 card-content">
-                <th class="center-align">Nombre</th>
-                <th class="center-align">TipoDocumento</th>
-                <th class="center-align">Identificacion</th>
-                <th class="center-align">Ciudad</th>
-                <th class="center-align">Celular</th>
-                <th class="center-align"></th>
-                <th class="center-align"></th>
-                <th class="center-align"></th>
+                <th class="center">Nombre</th>
+                <th class="center">TipoDocumento</th>
+                <th class="center">Identificacion</th>
+                <th class="center">Ciudad</th>
+                <th class="center">Celular</th>
+                <th class="center">Nombre Paciente</th>
+                <th class="center">Editar</th>
+                <th class="center">Eliminar</th>
+                <th class="center">Crear Paciente</th>
             </tr>
         </thead>
         <tbody>
@@ -42,13 +43,19 @@
             @foreach (var item in Model.Propietarios)
             {
             <tr>
-                <td class="center-align">@item.PrimerNombre @item.PrimerApellido</td>
-                <td class="center-align">@item.TipoIdentificacion</td>
-                <td class="center-align">@item.Identificacion</td>
-                <td class="center-align">@item.Ciudad</td>
-                <td class="center-align">@item.Celular1</td>
+                <td class="center">@item.PrimerNombre @item.PrimerApellido</td>
+                <td class="center">@item.TipoIdentificacion</td>
+                <td class="center">@item.Identificacion</td>
+                <td class="center">@item.Ciudad</td>
+                <td class="center">@item.Celular1</td>
+                <td class="center">
+                    @foreach (var p in @item.PropietarioPacientes)
+                    {
+                        <span>@p.Paciente.Nombre</span>
+                    }
+                </td>
 
-                <td>
+                <td class="center">
                     <a asp-route-id="@item.Id"
                        asp-page="Edit"
                        class="btn-floating btn waves-effect waves-light white-text blue darken-2 centrar">
@@ -57,7 +64,7 @@
                 </td>
 
 
-                <td>
+                <td class="center">
                     <button type="submit"
                             asp-page-handler="delete"
                             asp-route-id="@item.Id"
@@ -67,7 +74,7 @@
                     </button>
                 </td>
 
-                <td>
+                <td class="center">
                     <a asp-route-propietarioid="@item.Id"
                        asp-page="../Pacientes/Add"
                        class="btn-floating pulse btn waves-effect waves-light white-text blue darken-2">
